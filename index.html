@@ -1,56 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Music App</title>
 
 <style>
-
 body{
     margin:0;
-    font-family: Arial;
-    background: linear-gradient(135deg,#020024,#090979,#00d4ff);
+    font-family: Arial, sans-serif;
+    background:#121212;
     color:white;
 }
 
-/* Контейнер */
 .container{
     display:flex;
 }
 
-/* Sidebar */
 .sidebar{
     width:220px;
+    background:#000;
     height:100vh;
-    background:black;
-    padding:25px;
+    padding:20px;
 }
 
-/* Content */
+.sidebar h2{
+    margin-top:0;
+}
+
 .content{
     flex:1;
     padding:40px;
 }
 
-/* Track Card */
+.playlist{
+    display:flex;
+    flex-wrap:wrap;
+}
+
 .track{
-    width:300px;
+    width:280px;
     padding:20px;
     margin:20px;
-    border-radius:25px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(25px);
-    box-shadow:0 0 40px rgba(0,0,0,0.5);
+    border-radius:20px;
+    background:#1e1e1e;
+    transition:0.3s;
+}
+
+.track:hover{
+    transform:scale(1.05);
 }
 
 .track img{
     width:100%;
-    border-radius:20px;
+    border-radius:15px;
 }
 
 audio{
     width:100%;
-    margin-top:15px;
+    margin-top:10px;
 }
 
 button{
@@ -65,12 +73,6 @@ button{
 button:hover{
     background:#1ed760;
 }
-
-.playlist{
-    display:flex;
-    flex-wrap:wrap;
-}
-
 </style>
 </head>
 
@@ -82,6 +84,7 @@ button:hover{
 <h2>🎵 Music</h2>
 <p>Home</p>
 <p>Playlist</p>
+<p>Library</p>
 </div>
 
 <div class="content">
@@ -92,19 +95,14 @@ button:hover{
 
 <div class="track">
 <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d">
-
-<h3>⭐ Marvori</h3>
-
+<h3>Marvori</h3>
 <audio controls onplay="stopAll(this)">
 <source src="marvori.mp3" type="audio/mpeg">
 </audio>
-
 <br><br>
-
 <a href="marvori.mp3" download>
 <button>⬇ Download</button>
 </a>
-
 </div>
 
 <div class="track">
@@ -123,11 +121,9 @@ button:hover{
 
 </div>
 </div>
-
 </div>
 
 <script>
-
 let audios = document.querySelectorAll("audio");
 
 function stopAll(current){
@@ -135,9 +131,8 @@ function stopAll(current){
         if(a !== current){
             a.pause();
         }
-    })
+    });
 }
-
 </script>
 
 </body>
