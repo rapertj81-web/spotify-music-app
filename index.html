@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Music App</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#020024,#090979,#00d4ff);
+    color:white;
+}
+
+/* Контейнер */
+.container{
+    display:flex;
+}
+
+/* Sidebar */
+.sidebar{
+    width:220px;
+    height:100vh;
+    background:black;
+    padding:25px;
+}
+
+/* Content */
+.content{
+    flex:1;
+    padding:40px;
+}
+
+/* Track Card */
+.track{
+    width:300px;
+    padding:20px;
+    margin:20px;
+    border-radius:25px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(25px);
+    box-shadow:0 0 40px rgba(0,0,0,0.5);
+}
+
+.track img{
+    width:100%;
+    border-radius:20px;
+}
+
+audio{
+    width:100%;
+    margin-top:15px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:15px;
+    background:#1db954;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1ed760;
+}
+
+.playlist{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+<h2>🎵 Music</h2>
+<p>Home</p>
+<p>Playlist</p>
+</div>
+
+<div class="content">
+
+<h1>🔥 My Playlist</h1>
+
+<div class="playlist">
+
+<div class="track">
+<img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d">
+
+<h3>⭐ Marvori</h3>
+
+<audio controls onplay="stopAll(this)">
+<source src="marvori.mp3" type="audio/mpeg">
+</audio>
+
+<br><br>
+
+<a href="marvori.mp3" download>
+<button>⬇ Download</button>
+</a>
+
+</div>
+
+<div class="track">
+<h3>Padar</h3>
+<audio controls onplay="stopAll(this)">
+<source src="padar.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="track">
+<h3>Rivon Ganda</h3>
+<audio controls onplay="stopAll(this)">
+<source src="rivon_ganda.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+let audios = document.querySelectorAll("audio");
+
+function stopAll(current){
+    audios.forEach(a=>{
+        if(a !== current){
+            a.pause();
+        }
+    })
+}
+
+</script>
+
+</body>
+</html>
