@@ -1,83 +1,76 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music App</title>
+<title>Rivon Official</title>
 
 <style>
-
-body{
-    margin:0;
+body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background:#121212;
-    color:white;
+    background: linear-gradient(to bottom, #000000, #1a1a1a);
+    color: white;
+    text-align: center;
 }
 
-.container{
-    display:flex;
+.container {
+    padding: 40px 20px;
 }
 
-/* Sidebar */
-.sidebar{
-    width:220px;
-    background:#000;
-    min-height:100vh;
-    padding:20px;
+img {
+    width: 180px;
+    border-radius: 50%;
+    border: 3px solid gold;
+    margin-bottom: 20px;
 }
 
-/* Content */
-.content{
-    flex:1;
-    padding:30px;
+h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
 }
 
-/* Playlist layout */
-.playlist{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
+p {
+    color: #ccc;
 }
 
-/* Track card */
-.track{
-    width:250px;
-    background:#1e1e1e;
-    padding:15px;
-    border-radius:15px;
-    transition:0.3s;
+.track {
+    background: #111;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,215,0,0.2);
 }
 
-.track:hover{
-    transform:scale(1.05);
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: gold;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-/* FIX КАРТИНКИ */
-.track img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:12px;
+button:hover {
+    background: #ffcc00;
 }
 
-audio{
-    width:100%;
-    margin-top:10px;
+a {
+    text-decoration: none;
 }
 
-button{
-    padding:8px 15px;
-    border:none;
-    border-radius:10px;
-    background:#1db954;
-    color:white;
-    cursor:pointer;
+.socials {
+    margin-top: 30px;
 }
 
-button:hover{
-    background:#1ed760;
+footer {
+    margin-top: 50px;
+    color: #777;
+    font-size: 14px;
 }
-
 </style>
 </head>
 
@@ -85,62 +78,64 @@ button:hover{
 
 <div class="container">
 
-<div class="sidebar">
-<h2>🎵 Music</h2>
-<p>Home</p>
-<p>Playlist</p>
-<p>Library</p>
-</div>
+<h1>RIVON OFFICIAL</h1>
 
-<div class="content">
+<img src="rivonjpg.jpg" alt="Rivon Photo">
 
-<h1>🔥 My Playlist</h1>
+<p>Независимый артист. Музыка о жизни, вере и внутренней силе.</p>
 
-<div class="playlist">
+<h2>Мои треки</h2>
 
 <div class="track">
-<img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d">
-<h3>Marvori</h3>
-<audio controls onplay="stopAll(this)">
-<source src="marvori.mp3" type="audio/mpeg">
+<p>🎵 Marvori</p>
+<audio controls>
+  <source src="marvori.mp3" type="audio/mpeg">
 </audio>
-<br><br>
+<br>
 <a href="marvori.mp3" download>
-<button>⬇ Download</button>
+<button>Скачать</button>
 </a>
 </div>
 
 <div class="track">
-<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2">
-<h3>Padar</h3>
-<audio controls onplay="stopAll(this)">
-<source src="padar.mp3" type="audio/mpeg">
+<p>🎵 Padar</p>
+<audio controls>
+  <source src="padar.mp3" type="audio/mpeg">
 </audio>
+<br>
+<a href="padar.mp3" download>
+<button>Скачать</button>
+</a>
 </div>
 
 <div class="track">
-<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f">
-<h3>Rivon Ganda</h3>
-<audio controls onplay="stopAll(this)">
-<source src="rivon_ganda.mp3" type="audio/mpeg">
+<p>🎵 Rivon Ganda</p>
+<audio controls>
+  <source src="rivonganda.mp3" type="audio/mpeg">
 </audio>
+<br>
+<a href="rivonganda.mp3" download>
+<button>Скачать</button>
+</a>
 </div>
 
-</div>
-</div>
+<div class="socials">
+
+<a href="https://www.instagram.com/rivonofficial" target="_blank">
+<button>Instagram</button>
+</a>
+
+<a href="https://t.me/rivonofficiall" target="_blank">
+<button>Telegram</button>
+</a>
+
 </div>
 
-<script>
-let audios = document.querySelectorAll("audio");
+<footer>
+© 2026 Rivon Official
+</footer>
 
-function stopAll(current){
-    audios.forEach(a=>{
-        if(a !== current){
-            a.pause();
-        }
-    });
-}
-</script>
+</div>
 
 </body>
 </html>
